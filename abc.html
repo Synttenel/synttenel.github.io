@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Imagem</title>
+    <style>
+        /* Certifique-se de que a imagem e as áreas clicáveis estejam visíveis e dimensionadas corretamente */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        var cozinhaObjetos = [
+            ["geladeira", "Geladeira", 25, true],
+            ["microondas", "Micro-ondas", 75, true],
+            ["fogao", "Fogão", 150, true],
+            ["loucas", "Lava-louças", 100, true]
+        ];
+
+        // Função que será chamada ao clicar ou tocar em um objeto
+        function objetoClicado(index) {
+            var objeto = cozinhaObjetos[index];
+            alert("Você clicou em: " + objeto[1] + " (peso: " + objeto[2] + "kg)");
+        }
+
+        // Adiciona suporte para toque em dispositivos iOS
+        function adicionarSuporteToque() {
+            var areas = document.querySelectorAll('area');
+            areas.forEach(function(area, index) {
+                area.addEventListener('touchstart', function() {
+                    objetoClicado(index);
+                });
+            });
+        }
+
+        // Executa a função ao carregar a página para adicionar o suporte ao toque
+        window.onload = function() {
+            adicionarSuporteToque();
+        };
+    </script>
+</head>
+<body>
+
+<h1>Clique em um objeto da cozinha:</h1>
+<!-- Exemplo de imagem com mapa de imagem -->
+<img src="cozinha.jpeg" alt="Cozinha" usemap="#mapaCozinha">
+<map name="mapaCozinha">
+    <area shape="rect" coords="34,44,270,350" alt="Geladeira" href="javascript:void(0)" onclick="objetoClicado(0)">
+    <area shape="rect" coords="290,172,333,250" alt="Micro-ondas" href="javascript:void(0)" onclick="objetoClicado(1)">
+    <area shape="rect" coords="130,230,250,320" alt="Fogão" href="javascript:void(0)" onclick="objetoClicado(2)">
+    <area shape="rect" coords="340,270,430,350" alt="Lava-louças" href="javascript:void(0)" onclick="objetoClicado(3)">
+	<area shape="rect" coords="0,0,430,350" alt="Lava-louças" href="javascript:void(0)" clickable>
+</map>
+
+</body>
+</html>
