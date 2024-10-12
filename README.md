@@ -1,2 +1,0 @@
-# synttenel.github.io
-Test
