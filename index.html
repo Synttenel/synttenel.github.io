@@ -26,19 +26,7 @@
         }
 
         // Adiciona suporte para toque em dispositivos iOS
-        function adicionarSuporteToque() {
-            var areas = document.querySelectorAll('area');
-            areas.forEach(function(area, index) {
-                area.addEventListener('touchstart', function() {
-                    objetoClicado(index);
-                });
-            });
-        }
-
-        // Executa a função ao carregar a página para adicionar o suporte ao toque
-        window.onload = function() {
-            adicionarSuporteToque();
-        };
+   
     </script>
 </head>
 <body>
