@@ -4,7 +4,48 @@
 		<title>Ecohouse</title>
 
 		
-		
+		<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+<!-- Linka para uma CDN 'entrega de conteudo por https', onde temos o elemento promise do ES mais recente -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
+<!-- Linka o arquivo 'imagemapster' dentro do seu repositorio -->
+<script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
+		 <script>
+	//Inicia o plugin imageMapster 'jQuery'
+	$(document).ready(function () {
+        'use strict';
+	//Pega o id da imagem e usa funções do imageMapster
+	$('#fundoJogo').mapster({
+  //Identifica cada <area> que tenha data-title
+  mapkey: 'data-title',
+  //Preenche a <area> clicada
+  fillColor: '0096FF',
+  //Habilita a borda 
+  stroke: true,
+  strokeWidth: 2, 
+  strokeColor:'454B1B',
+  
+  //Escala o <map> e seus elemento para a resolução do dispositivo
+  scaleMap: true
+
+});
+$('#mapaCozinha').mapster({
+  //Identifica cada <area> que tenha data-title
+  mapkey: 'data-title',
+  //Preenche a <area> clicada
+  fillColor: '0096FF',
+  //Habilita a borda 
+  stroke: true,
+  strokeWidth: 2, 
+  strokeColor:'454B1B',
+  
+  //Escala o <map> e seus elemento para a resolução do dispositivo
+  scaleMap: true
+
+});
+	})
+
+
+		</script>
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/icon/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-icon-180x180.png">
@@ -66,15 +107,15 @@
 			</div>
 				
 				<map name="telaTitulo">
-					<area shape="rect" coords="0,0,1000,500" alt="Tela de Título" href="javascript:void(0)" onclick="javascript:mudarTela(1)" id="titulo">
+					<area shape="rect" data-title="tela" coords="0,0,1000,500" alt="Tela de Título" href="javascript:void(0)" onclick="javascript:mudarTela(1)" id="titulo">
 				</map>
 					
 				<map name="mapaCozinha">
-					<area shape="rect" coords="39,21,280,458" alt="Geladeira" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="objeto">
-					<area shape="rect" coords="300,27,522,152" alt="Microondas" href="javascript:void(0)" onclick="javascript:objetoClicado(1)" id="objeto">
-					<area shape="rect" coords="413,427,682,185" alt="Fogão" href="javascript:void(0)" onclick="javascript:objetoClicado(2)" id="objeto">
-					<area shape="rect" coords="640,130,878,0" alt="Lâmpada" href="javascript:void(0)" onclick="javascript:objetoClicado(3)" id="objeto">
-					<area shape="rect" coords="792,224,899,412" alt="Liquidificador" href="javascript:void(0)" onclick="javascript:objetoClicado(4)" id="objeto">
+					<area shape="rect" data-title="Geladeira"coords="39,21,280,458" alt="Geladeira" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="objeto">
+					<area shape="rect" data-title="Microondas" coords="300,27,522,152" alt="Microondas" href="javascript:void(0)" onclick="javascript:objetoClicado(1)" id="objeto">
+					<area shape="rect" data-title="Fogão" coords="413,427,682,185" alt="Fogão" href="javascript:void(0)" onclick="javascript:objetoClicado(2)" id="objeto">
+					<area shape="rect" data-title="Lâmpada" coords="640,130,878,0" alt="Lâmpada" href="javascript:void(0)" onclick="javascript:objetoClicado(3)" id="objeto">
+					<area shape="rect" data-title="Liquidificador" coords="792,224,899,412" alt="Liquidificador" href="javascript:void(0)" onclick="javascript:objetoClicado(4)" id="objeto">
 					
 					<area shape="rect" coords="0,0,1000,500" alt="#">
 				</map>
@@ -109,71 +150,6 @@
 		
 	<!-- JAVASCRIPT -->
 	<script type="text/javascript" src="/scripts/script.js"></script>
-		<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
-<!-- Linka para uma CDN 'entrega de conteudo por https', onde temos o elemento promise do ES mais recente -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
-<!-- Linka o arquivo 'imagemapster' dentro do seu repositorio -->
-<script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
-		 <script>
-	//Inicia o plugin imageMapster 'jQuery'
-	$(document).ready(function () {
-        'use strict';
-	//Pega o id da imagem e usa funções do imageMapster
-	$('#cozinha').mapster({
-  //Identifica cada <area> que tenha data-title
-  mapkey: 'data-title',
-  //Preenche a <area> clicada
-  fillColor: '0096FF',
-  //Habilita a borda 
-  stroke: true,
-  strokeWidth: 2, 
-  strokeColor:'454B1B',
-  
-  //Escala o <map> e seus elemento para a resolução do dispositivo
-  scaleMap: true
-  /*showToolTip: true,
-  toolTip: function (data) {
-  return $(data.target).data('data-title');	
-  }
-  areas: [
-	  {
-		key: 'e',
-		toolTip: 'Letra e'
-	  },
-	  {
-		key: 'c',
-		toolTip: 'Letra c'
-	  },
-		{
-		key: 'o',
-		toolTip: 'Letra o'
-	  },
-		{
-		key: 'h',
-		toolTip: 'Letra h'
-	  },
-		{
-		key: 'o1',
-		toolTip: 'Letra o'
-	  },
-		{
-		key: 'u',
-		toolTip: 'Letra u'
-	  },
-		{
-		key: 's',
-		toolTip: 'Letra s'
-	  },
-		{
-		key: 'e1',
-		toolTip: 'Letra e'
-	  }
-	  
-	  
-  ]*/
-});})
 
-
-		</script>
 	</body>
 </html>
