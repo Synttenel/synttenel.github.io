@@ -2,7 +2,40 @@
 <html lang="en" style="<!--cursor: url('/assets/cursor.png'), url('/assets/cursor_32.png'), auto;-->">
 	<head>
 		<title>Ecohouse</title>
+
 		
+		<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+<!-- Linka para uma CDN 'entrega de conteudo por https', onde temos o elemento promise do ES mais recente -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
+<!-- Linka o arquivo 'imagemapster' dentro do seu repositorio -->
+<script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
+		 <script>
+	//Inicia o plugin imageMapster 'jQuery'		
+				
+	$(document).ready(function () {
+        'use strict';
+	//Pega o id da imagem e usa funções do imageMapster
+	$('img[usemap]').mapster({
+  //Identifica cada <area> que tenha data-title
+  
+  scaleMap: true
+  //Escala o <map> e seus elemento para a resolução do dispositivo
+
+
+	
+  
+
+});
+	})
+
+	
+
+	
+			
+		 
+
+
+		</script>
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/icon/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-icon-180x180.png">
@@ -61,18 +94,20 @@
 		<div class="mainJogo" style="disableSelect"> <!-- Jogo -->
 			<div id="telaJogo" style="margin-top: 2%;">
 				<img id="fundoJogo" class="jogoFundo" alt="Jogo" usemap="#telaTitulo" src="/assets/titulo.jpeg"/>
+		
+				
 			</div>
 				
 				<map name="telaTitulo">
-					<area shape="rect" coords="0,0,1000,500" alt="Tela de Título" href="javascript:void(0)" onclick="javascript:mudarTela(1)" id="titulo">
+					<area shape="rect" data-title="tela" coords="0,0,1000,500" alt="Tela de Título" href="javascript:void(0)" onclick="javascript:mudarTela(1)" id="titulo">
 				</map>
 					
 				<map name="mapaCozinha">
-					<area shape="rect" coords="39,21,280,458" alt="Geladeira" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="objeto">
-					<area shape="rect" coords="300,27,522,152" alt="Microondas" href="javascript:void(0)" onclick="javascript:objetoClicado(1)" id="objeto">
-					<area shape="rect" coords="413,427,682,185" alt="Fogão" href="javascript:void(0)" onclick="javascript:objetoClicado(2)" id="objeto">
-					<area shape="rect" coords="640,130,878,0" alt="Lâmpada" href="javascript:void(0)" onclick="javascript:objetoClicado(3)" id="objeto">
-					<area shape="rect" coords="792,224,899,412" alt="Liquidificador" href="javascript:void(0)" onclick="javascript:objetoClicado(4)" id="objeto">
+					<area shape="rect" data-title="Geladeira"coords="39,21,280,458" alt="Geladeira" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="objeto">
+					<area shape="rect" data-title="Microondas" coords="300,27,522,152" alt="Microondas" href="javascript:void(0)" onclick="javascript:objetoClicado(1)" id="objeto">
+					<area shape="rect" data-title="Fogão" coords="413,427,682,185" alt="Fogão" href="javascript:void(0)" onclick="javascript:objetoClicado(2)" id="objeto">
+					<area shape="rect" data-title="Lâmpada" coords="640,130,878,0" alt="Lâmpada" href="javascript:void(0)" onclick="javascript:objetoClicado(3)" id="objeto">
+					<area shape="rect" data-title="Liquidificador" coords="792,224,899,412" alt="Liquidificador" href="javascript:void(0)" onclick="javascript:objetoClicado(4)" id="objeto">
 					
 					<area shape="rect" coords="0,0,1000,500" alt="#">
 				</map>
@@ -107,5 +142,6 @@
 		
 	<!-- JAVASCRIPT -->
 	<script type="text/javascript" src="/scripts/script.js"></script>
+
 	</body>
 </html>
