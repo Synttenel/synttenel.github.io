@@ -14,7 +14,7 @@
 	$(document).ready(function () {
         'use strict';
 	//Pega o id da imagem e usa funções do imageMapster
-	$('#fundoJogo').mapster({
+	$('#img[usemap]').mapster({
   //Identifica cada <area> que tenha data-title
   mapkey: 'data-title',
   //Preenche a <area> clicada
@@ -30,23 +30,9 @@
   
 
 });
-
-	$('#cozinha').mapster({
-  //Identifica cada <area> que tenha data-title
-  mapkey: 'data-title',
-  //Preenche a <area> clicada
-  fillColor: '0096FF',
-  //Habilita a borda 
-  stroke: true,
-  strokeWidth: 2, 
-  scaleMap: true,
-  //Escala o <map> e seus elemento para a resolução do dispositivo
-
+	}
 
 	
-  
-
-});
 
 	
 			
@@ -112,7 +98,7 @@
 		<div class="mainJogo" style="disableSelect"> <!-- Jogo -->
 			<div id="telaJogo" style="margin-top: 2%;">
 				<img id="fundoJogo" class="jogoFundo" alt="Jogo" usemap="#telaTitulo" src="/assets/titulo.jpeg"/>
-				<img id="cozinha" class="cozinha" alt="cozinha" src="/assets/comodo/cozinha.png"/>
+		
 				
 			</div>
 				
