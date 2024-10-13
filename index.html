@@ -28,9 +28,10 @@
 <script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
     <script>
 
+	$(function () {
+        'use strict';
 
-
-	$('#mapaCozinha').mapster({
+	$('img[usemap]').mapster({
   mapkey: 'data-title',
   fillColor: '0096FF',
   stroke: true,
@@ -41,7 +42,7 @@
   autoResizeDuration: 0
 			
 });
-$('#mapaCozinha').mapster('highlight');	
+
 
 
 
