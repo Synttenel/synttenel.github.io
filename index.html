@@ -9,6 +9,10 @@
         img {
             max-width: 100%;
             height: auto;
+		margin: auto;
+		padding: auto;
+		text-align: center;
+		
         }
 	@media screen and (max-width: 1000){
 	img {
@@ -19,6 +23,9 @@
 		
 	}
     </style>
+	<script src="
+https://cdn.jsdelivr.net/npm/imagemapster@1.8.0/dist/jquery.imagemapster.min.js
+"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.8.0/jquery.imagemapster.min.js" integrity="sha512-18b1YKEQCvv8P4pvvf1lFmJIYLjU6gqzz8Cw+J/Q5lFL5bf56QtK8xMLH/7Vvv+FGRxscyeP7G5pq2AgtQEyAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	
 	<!-- Optional: If targeting ES5 browers, as of ImageMapster v1.3.0, a Promise polyfill is required! -->
@@ -32,7 +39,7 @@
 ></script>
 <script language="text/javascript" src="jquery.imagemapster.min.js"></script>
 	<script>
-		$('img').mapster({
+		$('img[mapaCozinha]').mapster({
   fillColor: 'ff0000',
   stroke: true,
   singleSelect: true,
@@ -40,8 +47,9 @@
   autoResize: true,
   autoResizeDelay: 0,
   autoResizeDuration: 0
+			
 });
-		
+$('#sim').mapster('highlight');		
 	</script>
     <script>
         var cozinhaObjetos = [
@@ -69,7 +77,7 @@
 	
 <img src="cozinha.jpeg" alt="Cozinha" usemap="#mapaCozinha">
 <map name="mapaCozinha">
-    <area  alt="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly"></area>
+    <area  alt="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly" id="sim"></area>
     <area alt="c"   href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
     <area  alt="o"   href="javascript:void(0)" coords="363,204,345,240,368,271,404,249,400,213" onclick="objetoClicado(2)" shape="poly"></area>
     <area  alt="h"   href="javascript:void(0)" coords="460,196,493,209,482,266,514,260,470,175,452,167,415,187,426,219,421,276,500,249" onclick="objetoClicado(3)" shape="poly"></area>
