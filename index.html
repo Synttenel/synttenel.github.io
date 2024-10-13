@@ -107,8 +107,11 @@
 <h1>Clique em um objeto da cozinha:</h1>
 
 
-	
+<img src="final.jpeg" alt="final" id="final" usemap="#mapaFinal">
 <img src="cozinha.jpeg" alt="Cozinha" id="cozinha" usemap="#mapaCozinha">
+<map name="mapaFinal">
+	<area data-title="a" coords="0,0,1000,5000" href="javascript:void(0)" onclick="console.log('clicou')" shape="rect"></area>
+</map>
 <map name="mapaCozinha">
     <area  alt="e" key="" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly"></area>
     <area alt="c"   data-title="c" href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
