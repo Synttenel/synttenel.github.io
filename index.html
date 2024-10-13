@@ -11,10 +11,39 @@
 <script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
 		 <script>
 	//Inicia o plugin imageMapster 'jQuery'
+	 const divJogo = document.getElementById("telaJogo");
+const fundoJogo = document.getElementById("fundoJogo");
+
+//comodos
+var comodos = ["Titulo", "Cozinha", "Sala", "Quarto", "Banheiro", "Final"];
+var comodoMapas = ["#telaTitulo", "#mapaCozinha", "#mapaSala", "#mapaQuarto", "#mapaBanheiro", "#telaFinal"];
+var comodoImagens = ["/assets/titulo.jpeg", "/assets/comodos/cozinha.png", "/assets/comodos/sala.png", "/assets/comodos/quarto.png", "/assets/comodos/banheiro.png", "/assets/final.jpeg"]
+var comodoConsumoInicial = [670, 100, 100, 100];
+var comodoAtual = comodos[0];
+			 
+			 function mudarTela(mapa){
+	fundoJogo.src = comodoImagens[mapa];
+	
+	jogadorComodo = mapa;
+	comodoAtual = comodos[mapa];
+	
+	if(mapa != 0){ interfaceHUD.style.visibility = "visible" }
+	if(mapa == 5){ interfaceHUD.style.visibility = "hidden"; }
+	
+	consumoAtual.innerHTML = comodoConsumoInicial[mapa - 1];
+	consumoInicial.innerHTML = comodoConsumoInicial[mapa - 1];
+	
+	fundoJogo.setAttribute('usemap', comodoMapas[mapa]);
+	
+	
+}
+
+
+			 
 	$(document).ready(function () {
         'use strict';
 	//Pega o id da imagem e usa funções do imageMapster
-	$('/assets/titulo.jpeg').mapster({
+	$('#fundoJogo').mapster({
   //Identifica cada <area> que tenha data-title
   mapkey: 'data-title',
   //Preenche a <area> clicada
@@ -22,36 +51,18 @@
   //Habilita a borda 
   stroke: true,
   strokeWidth: 2, 
-  
-  isSelectable: false,
   scaleMap: true,
   //Escala o <map> e seus elemento para a resolução do dispositivo
-  areas: [
-	  {key: 'tela',
-	   isMask: true
-		  
-	  }
-]
+
 
 	
   
 
 });
-$('#mapaCozinha').mapster({
-  //Identifica cada <area> que tenha data-title
-  mapkey: 'data-title',
-  //Preenche a <area> clicada
-  fillColor: '0096FF',
-  //Habilita a borda 
-  stroke: true,
-  strokeWidth: 2, 
-  
-  
-  //Escala o <map> e seus elemento para a resolução do dispositivo
-  scaleMap: true
 
-});
 	})
+			
+			 
 
 
 		</script>
