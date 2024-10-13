@@ -1,24 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa de Imagem</title>
-    <style>
-        /* Certifique-se de que a imagem e as áreas clicáveis estejam visíveis e dimensionadas corretamente */
-       
+<html lang="en" style="<!--cursor: url('/assets/cursor.png'), url('/assets/cursor_32.png'), auto;-->">
+	<head>
+		<title>Ecohouse</title>
 		
-	
-    </style>
-<!-- Linka o arquivo 'jQuery' dentro de seu repositorio-->
+		<!-- Linka o arquivo 'jQuery' dentro de seu repositorio-->
 <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
 <!-- Linka para uma CDN 'entrega de conteudo por https', onde temos o elemento promise do ES mais recente -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
 <!-- Linka o arquivo 'imagemapster' dentro do seu repositorio -->
 <script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
-    <!-- <script> para o plugin-->
-    <script>
-	//Inicia o plugin imageMapster 'jQuery'
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="/scripts/style.css">
+		
+		<!-- Social Media Preview: -->
+		<meta property="og:title" content="Ecohouse">
+		<meta property="og:description" content="Projeto Ecohouse da turma 3BINF de 2024 do Colégio 1º de Maio.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://turma3binf.github.io/">
+		
+		<meta property="og:image" content="https://turma3binf.github.io/assets/midia.jpeg">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="600">
+		<meta name="theme-color" content="#005208">
+		
+		<!-- Twitter Preview: -->
+		<meta property="twitter:title" content="Ecohouse">
+		<meta property="twitter:site" content="Ecohouse">
+		<meta property="twitter:description" content="Projeto Ecohouse da turma 3BINF de 2024 do Colégio 1º de Maio.">
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:image:src" content="https://turma3binf.github.io/assets/midia.jpeg">
+		
+		<!-- Others -->
+		<meta charset="UTF-8"/>
+		<meta name="keywords" content="ecohouse, 3binf, colegio primeiro de maio, 1 de maio, primeiro de maio, projeto ecohouse">
+		<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+
+		<script>
+			//Inicia o plugin imageMapster 'jQuery'
 	$(document).ready(function () {
         'use strict';
 	//Pega o id da imagem e usa funções do imageMapster
@@ -78,42 +97,33 @@
 
 
 		</script>
-<!-- <script> para scripts no geral -->
-<script>
-	//Array/objeto dos objetos do mapa 
-        var cozinhaObjetos = [
-            ["geladeira", "E", 25, true],
-            ["microondas", "C", 75, true],
-            ["fogao", "O", 150, true],
-            ["loucas", "H", 100, true],
-	    ["video", "O1", 180, true],
-	    ["ventilador", "U", 90, true],
-	    ["ar", "s", 10, true],
-            ["tv", "E1", 65, true]
-        ];
-
-        // Função que será chamada ao clicar ou tocar em um objeto
-        function objetoClicado(index) {
-            var objeto = cozinhaObjetos[index];
-           	console.log("Você clicou em: " + objeto[1] + " (peso: " + objeto[2] + "kg)");
-        }
-
-        
-   
-    </script>
-</head>
-<body>
-
-<h1>Clique em um objeto da cozinha:</h1>
-
-
-<img src="final.jpeg" alt="final" id="final" usemap="#mapaFinal">
-<img src="cozinha.jpeg" alt="Cozinha" id="cozinha" usemap="#mapaCozinha">
-<map name="mapaFinal">
-	<area data-title="a" coords="0,0,1000,5000" href="javascript:void(0)" onclick="console.log('clicou')" shape="rect"></area>
-</map>
-<map name="mapaCozinha">
-    <area  alt="e" key="" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly"></area>
+	</head>
+	
+	<body> <!-- CORPO DO SITE -->
+		<div id="interfaceJogo" class="interfaceJogo" style="position: fixed; visibility: hidden; z-index: 8;">
+			<div>	
+				<b><font id="consumoAtual" class="fontEnergia" style="bottom: 48px;">0,00</font><br>
+				<font id="economiaTotal" class="fontEnergia" style="bottom: 28px;">0,00</font><br>
+				<font id="consumoInicial" class="fontEnergia" style="bottom: 8px;">0,00</font></b>
+				<img class="adesivo" alt="#" src="/assets/interface/adesivo.png" style="z-index: 9;"/>
+			</div>
+		</div>
+		
+		<div style="width: 100vw; height: 100vh; margin: 0;">
+		<div class="tela">
+		
+		<center>
+		<div class="mainJogo" style="disableSelect"> <!-- Jogo -->
+			<div id="telaJogo" style="margin-top: 2%;">
+				<img id="fundoJogo" class="jogoFundo" alt="Jogo" usemap="#telaTitulo" src="final.jpeg">
+			</div>
+				
+				<map name="telaTitulo">
+					<area shape="rect" coords="0,0,1000,500" alt="Tela de Título" href="javascript:void(0)" onclick="javascript:mudarTela(1)" id="titulo">
+				</map>
+				<img id="mapaCozinha" class="mapaCozinha" alt="cozinha" usemap="#mapaCozinha" src="cozinha.jpeg"/>
+				<map name="mapaCozinha">
+					   <area  alt="e" key="" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly"></area>
     <area alt="c"   data-title="c" href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
     <area  alt="o"   data-title="o" href="javascript:void(0)" coords="363,204,345,240,368,271,404,249,400,213" onclick="objetoClicado(2)" shape="poly"></area>
     <area  alt="h"   data-title="h" href="javascript:void(0)" coords="497,207,450,165,418,186,424,244,416,268,486,266,502,266,512,266" onclick="objetoClicado(3)" shape="poly"></area>
@@ -121,8 +131,24 @@
     <area  alt="u" data-title="u" href="javascript:void(0)" coords="599,202,607,270,676,279,682,210,641,202" onclick="objetoClicado(5)" shape="poly"></area>
     <area  alt="s" data-title="s" href="javascript:void(0)" coords="763,233,751,239,736,232,734,219,723,225,735,244,750,256,755,266,753,276,735,283,722,283,707,277,699,273,693,265,695,256,704,246,696,236,695,222,702,217,714,214,725,213,746,217" onclick="objetoClicado(6)" shape="poly"></area>
     <area  alt="e1" data-title="e1" href="javascript:void(0)" coords="834,224,778,291" onclick="objetoClicado(7)" shape="rect"></area>
-</map>
- 
-
-</body>
+					
+					
+				</map>
+				
+		</div>
+		
+		<div class="headerFooter padding: auto;"> <!-- Footer -->
+			<b><font size="5">
+				<font size="4">FEITO PELO GRUPO 1 DA TURMA 3BINF,<br>COLÉGIO PRIMEIRO DE MAIO
+				<br><img src="/assets/interface/CPM_LOGO.png" style="width: 5%; min-width: 40px; margin-top: 6px; -webkit-filter: drop-shadow(0 2px 0 rgba(126, 162, 100, 1)); filter: drop-shadow(0 2px 0 rgba(126, 162, 100, 1));"></font>
+			</font></b>
+		</div>
+		</center>
+		
+		</div>
+		</div>
+		
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript" src="/scripts/script.js"></script>
+	</body>
 </html>
