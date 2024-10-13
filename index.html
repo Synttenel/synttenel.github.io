@@ -28,10 +28,10 @@
 <script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
     <script>
 
-	$(function () {
+	$(document).ready(function () {
         'use strict';
 
-	$('img[usemap]').mapster({
+	$('#cozinha').mapster({
   mapkey: 'data-title',
   fillColor: '0096FF',
   stroke: true,
@@ -71,7 +71,7 @@
 <!-- Exemplo de imagem com mapa de imagem -->
 
 	
-<img src="cozinha.jpeg" alt="Cozinha" usemap="#mapaCozinha">
+<img src="cozinha.jpeg" alt="Cozinha" id="cozinha" usemap="#mapaCozinha">
 <map name="mapaCozinha">
     <area  alt="e" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly" id="sim"></area>
     <area alt="c"   data-title="c" href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
