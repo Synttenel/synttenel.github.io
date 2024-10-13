@@ -73,23 +73,21 @@ function mudarTela(mapa){
 $(document).ready(function () {
         'use strict';
 	 $('img[usemap]').mapster({
-        mapkey: 'data-title',
+        mapKey: 'data-key',
   fillColor: '0096FF',
-  highlight: false,
+  highlight: true,
   isSelectable: true,
   stroke: true,
   strokeWidth: 2, 
-        scaleMap: true//,  // Escala o <map> e seus elementos
-	//area: [
-		//{key: 'geladeira', highlight: true, isSelectable: true},
-		//{key: 'microondas', highlight: true, isSelectable: true},
-		//{key: 'fogão', highlight: true, isSelectable: true},
-		//{key: 'lâmpada', highlight: true, isSelectable: true},
-		//{key: 'liquidificador', highlight: true, isSelectable: true}
+        scaleMap: true,  // Escala o <map> e seus elementos
+	areas: [
+		{key: 'tela', highlight: false, isSelectable: false},
+		{key: 'final', highlight: false, isSelectable:false}
+		
 	       
 	       
 	       
-	      // ]
+	       ]
 	
 });})
 	
