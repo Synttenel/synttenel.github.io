@@ -70,6 +70,14 @@ function mudarTela(mapa){
 	
 	fundoJogo.setAttribute('usemap', comodoMapas[mapa]);
 	
+$(document).ready(function () {
+        'use strict';
+	 $('img[usemap]').mapster({
+        highlight: false,
+        isSelectable: false,
+        scaleMap: true  // Escala o <map> e seus elementos
+    });})
+	
 	
 }
 
