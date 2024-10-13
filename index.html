@@ -3,12 +3,13 @@
 	<head>
 		<title>Ecohouse</title>
 		
-		<!-- Linka o arquivo 'jQuery' dentro de seu repositorio-->
-<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
-<!-- Linka para uma CDN 'entrega de conteudo por https', onde temos o elemento promise do ES mais recente -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
-<!-- Linka o arquivo 'imagemapster' dentro do seu repositorio -->
-<script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/assets/icon/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+		<link rel="manifest" href="/assets/icon/manifest.json">
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="/scripts/style.css">
@@ -36,197 +37,11 @@
 		<meta name="keywords" content="ecohouse, 3binf, colegio primeiro de maio, 1 de maio, primeiro de maio, projeto ecohouse">
 		<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 
-		<script>
-			//Inicia o plugin imageMapster 'jQuery'
-	$(document).ready(function () {
-        'use strict';
-	//Pega o id da imagem e usa funções do imageMapster
-	$('#cozinha').mapster({
-  //Identifica cada <area> que tenha data-title
-  mapkey: 'data-title',
-  //Preenche a <area> clicada
-  fillColor: '0096FF',
-  //Habilita a borda 
-  stroke: true,
-  strokeWidth: 2, 
-  strokeColor:'454B1B',
-  
-  //Escala o <map> e seus elemento para a resolução do dispositivo
-  scaleMap: true
-  /*showToolTip: true,
-  toolTip: function (data) {
-  return $(data.target).data('data-title');	
-  }
-  areas: [
-	  {
-		key: 'e',
-		toolTip: 'Letra e'
-	  },
-	  {
-		key: 'c',
-		toolTip: 'Letra c'
-	  },
-		{
-		key: 'o',
-		toolTip: 'Letra o'
-	  },
-		{
-		key: 'h',
-		toolTip: 'Letra h'
-	  },
-		{
-		key: 'o1',
-		toolTip: 'Letra o'
-	  },
-		{
-		key: 'u',
-		toolTip: 'Letra u'
-	  },
-		{
-		key: 's',
-		toolTip: 'Letra s'
-	  },
-		{
-		key: 'e1',
-		toolTip: 'Letra e'
-	  }
-	  
-	  
-  ]*/
-});})
-
-
-		</script>
-		<!-- INICIO DO SCRIPT -->
-		<script>
-			const divJogo = document.getElementById("telaJogo");
-const fundoJogo = document.getElementById("fundoJogo");
-
-//comodos
-var comodos = ["Titulo", "Cozinha", "Sala", "Quarto", "Banheiro", "Final"];
-var comodoMapas = ["#telaTitulo", "#mapaCozinha", "#mapaSala", "#mapaQuarto", "#mapaBanheiro", "#telaFinal"];
-var comodoImagens = ["/assets/titulo.jpeg", "/assets/comodos/cozinha.png", "/assets/comodos/sala.png", "/assets/comodos/quarto.png", "/assets/comodos/banheiro.png", "/assets/final.jpeg"]
-var comodoConsumoInicial = [670, 100, 100, 100];
-var comodoAtual = comodos[0];
-
-//interface
-const interfaceHUD = document.getElementById("interfaceJogo");
-const adesivoHUD = document.getElementById("adesivo");
-
-const consumoAtual = document.getElementById("consumoAtual");
-const consumoInicial = document.getElementById("consumoInicial");
-const economiaTotal = document.getElementById("economiaTotal");
-
-//quartos
-const cozinhaMapa = document.getElementsByName("mapaCozinha");
-var cozinhaObjetos = [
-	["geladeira", "Geladeira", 25, true],
-	["microondas", "Micro-ondas", 75, true],
-	["fogao", "Fogão", 150, true],
-	["lampada", "Lâmpada", 10, true],
-	["liquidificador", "Liquidificador", 50, true]
-];
-var cozinhaProgresso = 0;
-var cozinhaFaltando = 310;
-
-const salaMapa = document.getElementsByName("mapaSala");
-var salaObjetos = [
-	["televisao", "Televisão", 100, true]
-];
-var salaProgresso = 0;
-var salaFaltando = 100;
-
-const quartoMapa = document.getElementsByName("mapaQuarto");
-var quartoObjetos = [
-	["ar", "Ar-condicionado", 100, true]
-];
-var quartoProgresso = 0;
-var quartoFaltando = 100;
-
-const banheiroMapa = document.getElementsByName("mapaBanheiro");
-var banheiroObjetos = [
-	["privada", "Privada Inteligente", 100, true]
-];
-var banheiroProgresso = 0;
-var banheiroFaltando = 100;
-
-//jogador
-var comodoObjetos = [cozinhaObjetos, salaObjetos, quartoObjetos, banheiroObjetos];
-var jogadorComodo = 0;
-var jogadorProgresso = [cozinhaProgresso, salaProgresso, quartoProgresso, banheiroProgresso];
-var jogadorEnergiaFaltando = [cozinhaFaltando, salaFaltando, quartoFaltando, banheiroFaltando];
-
-function reescalarMapa(){
-	var mapaElemento = document.getElementByName(comodoMapas[jogadorComodo].replace("#", ""));
-	var escala = divJogo.clientWidth / fundoJogo.naturalWidth;
-	var areaElemento = mapaElemento.querySelectorAll(`area`);
-
-	console.log(mapaElemento);
-
-    //areaElemento.forEach(area => {
-     //   const coords = area.getAttribute('coords').split(',').map(Number);
-    //    console.log(`Coordenadas Originais: ${coords}`);
-	//
-       // if (coords.length === 4) { // Verifique se temos 4 coordenadas
-     //       const newCoords = coords.map(coord => Math.round(coord * escala));
-   //         console.log(`Novas Coordenadas: ${newCoords}`);
-    //        area.setAttribute('coords', newCoords.join(','));
-      //  } else {
-        //    console.error('Formato de coordenadas inválido. Esperado: left,top,right,bottom');
-      //  }
-    //});
-}
-
-function mudarTela(mapa){
-	fundoJogo.src = comodoImagens[mapa];
-	
-	jogadorComodo = mapa;
-	comodoAtual = comodos[mapa];
-	
-	if(mapa != 0){ interfaceHUD.style.visibility = "visible"; }
-	if(mapa == 5){ interfaceHUD.style.visibility = "hidden"; }
-	
-	consumoAtual.innerHTML = comodoConsumoInicial[mapa - 1];
-	consumoInicial.innerHTML = comodoConsumoInicial[mapa - 1];
-	
-	fundoJogo.setAttribute('usemap', comodoMapas[mapa]);
-	
-	reescalarMapa();
-}
-
-function objetoClicado(objetoNome){
-	var objetos = comodoObjetos[jogadorComodo - 1];
-	var objetoAtual = objetos[objetoNome]
-	
-	if(!objetoAtual[3]){
-		return;
-	} else {
-		objetoAtual[3] = false;
-		console.log(objetoAtual)
-		jogadorProgresso[jogadorComodo - 1] += objetoAtual[2];
-		jogadorEnergiaFaltando[jogadorComodo - 1] = jogadorEnergiaFaltando[jogadorComodo - 1] - objetoAtual[2];
-
-		let resultado = jogadorProgresso[jogadorComodo - 1].toFixed(2).replace(".", ",");
-		economiaTotal.innerHTML = resultado;
-	}
-	
-	consumoAtual.innerHTML = (comodoConsumoInicial[jogadorComodo - 1] - jogadorProgresso[jogadorComodo - 1]).toString();
-
-	if(jogadorEnergiaFaltando[jogadorComodo - 1] == 0){
-		proximoComodo(jogadorComodo, jogadorComodo + 1);
-	}
-}
-
-function proximoComodo(ultimoComodo, proximoComodo){
-	alert("Comodo atual: " + comodos[ultimoComodo] + "\nPróximo comodo: " + comodos[proximoComodo]);
-	mudarTela(proximoComodo);
-}
-
-// PHONES
-
-let eventoToque = 'ontouchstart' in window ? 'touch' : 'clique';
-		</script>
-		<!-- FINAL DO SCRIPT -->
+		
+		<!-- Google Fonts for the new site -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 	</head>
 	
 	<body> <!-- CORPO DO SITE -->
@@ -245,26 +60,38 @@ let eventoToque = 'ontouchstart' in window ? 'touch' : 'clique';
 		<center>
 		<div class="mainJogo" style="disableSelect"> <!-- Jogo -->
 			<div id="telaJogo" style="margin-top: 2%;">
-				<img id="fundoJogo" class="jogoFundo" alt="Jogo" usemap="#telaTitulo" src="final.jpeg">
+				<img id="fundoJogo" class="jogoFundo" alt="Jogo" usemap="#telaTitulo" src="/assets/titulo.jpeg"/>
 			</div>
 				
 				<map name="telaTitulo">
 					<area shape="rect" coords="0,0,1000,500" alt="Tela de Título" href="javascript:void(0)" onclick="javascript:mudarTela(1)" id="titulo">
 				</map>
-				<img id="mapaCozinha" class="mapaCozinha" alt="cozinha" usemap="#mapaCozinha" src="cozinha.jpeg"/>
+					
 				<map name="mapaCozinha">
-					   <area  alt="e" key="" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly"></area>
-    <area alt="c"   data-title="c" href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
-    <area  alt="o"   data-title="o" href="javascript:void(0)" coords="363,204,345,240,368,271,404,249,400,213" onclick="objetoClicado(2)" shape="poly"></area>
-    <area  alt="h"   data-title="h" href="javascript:void(0)" coords="497,207,450,165,418,186,424,244,416,268,486,266,502,266,512,266" onclick="objetoClicado(3)" shape="poly"></area>
-    <area  alt="o1" data-title="o1" href="javascript:void(0)" coords="554,236,36" onclick="objetoClicado(4)" shape="circle"></area>
-    <area  alt="u" data-title="u" href="javascript:void(0)" coords="599,202,607,270,676,279,682,210,641,202" onclick="objetoClicado(5)" shape="poly"></area>
-    <area  alt="s" data-title="s" href="javascript:void(0)" coords="763,233,751,239,736,232,734,219,723,225,735,244,750,256,755,266,753,276,735,283,722,283,707,277,699,273,693,265,695,256,704,246,696,236,695,222,702,217,714,214,725,213,746,217" onclick="objetoClicado(6)" shape="poly"></area>
-    <area  alt="e1" data-title="e1" href="javascript:void(0)" coords="834,224,778,291" onclick="objetoClicado(7)" shape="rect"></area>
+					<area shape="rect" coords="39,21,280,458" alt="Geladeira" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="objeto">
+					<area shape="rect" coords="300,27,522,152" alt="Microondas" href="javascript:void(0)" onclick="javascript:objetoClicado(1)" id="objeto">
+					<area shape="rect" coords="413,427,682,185" alt="Fogão" href="javascript:void(0)" onclick="javascript:objetoClicado(2)" id="objeto">
+					<area shape="rect" coords="640,130,878,0" alt="Lâmpada" href="javascript:void(0)" onclick="javascript:objetoClicado(3)" id="objeto">
+					<area shape="rect" coords="792,224,899,412" alt="Liquidificador" href="javascript:void(0)" onclick="javascript:objetoClicado(4)" id="objeto">
 					
-					
+					<area shape="rect" coords="0,0,1000,500" alt="#">
 				</map>
 				
+				<map name="mapaSala">
+					<area shape="rect" coords="0,0,1000,500" alt="Televisão" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="titulo">
+				</map>
+				
+				<map name="mapaQuarto">
+					<area shape="rect" coords="0,0,1000,500" alt="Ar-condicionado" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="titulo">
+				</map>
+				
+				<map name="mapaBanheiro">
+					<area shape="rect" coords="0,0,1000,500" alt="Privada Inteligente" href="javascript:void(0)" onclick="javascript:objetoClicado(0)" id="titulo">
+				</map>
+				
+				<map name="telaFinal">
+					<area shape="rect" coords="0,0,1000,500" alt="Game Over" href="javascript:void(0)" onclick="window.location.reload()" id="final">
+				</map>
 		</div>
 		
 		<div class="headerFooter padding: auto;"> <!-- Footer -->
@@ -279,6 +106,6 @@ let eventoToque = 'ontouchstart' in window ? 'touch' : 'clique';
 		</div>
 		
 	<!-- JAVASCRIPT -->
-	
+	<script type="text/javascript" src="/scripts/script.js"></script>
 	</body>
 </html>

@@ -1,0 +1,129 @@
+body {
+	background-image: url("/assets/background.jpeg");
+	background-color: #c0cc94;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+
+	width: 100%;
+	
+	margin: 0;
+	padding: 0;
+	
+	min-height: -webkit-fill-available;
+}
+
+font {
+	font-family: "Bree Serif", serif;
+	font-weight: 600;
+	font-style: normal;
+	color: #413600;
+	text-shadow: 0 2px 0 #8D9059;
+}
+
+.fontEnergia {
+	color: #000000;
+	text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+	
+	position: absolute;
+	z-index: 10;
+	
+	right: 0;
+	font-size: x-large ;
+}
+
+@font-face {
+    font-family: "Margin";
+    src: url("/assets/Margin.woff2");
+}
+
+.tituloMargin {
+	font-family: 'Margin', serif;
+	font-weight: 600;
+	text-shadow: 0 2px 0 #7EA264;
+	color: #005208;
+}
+
+.disableSelect {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.headerFooter {
+	width: 100%;
+	overflow-wrap: break-word;
+}
+
+.jogoFundo {
+	width: 1000px;
+	z-index: 1;
+}
+
+.interfaceJogo {
+	left: 1%;
+	bottom: 1%;
+}
+
+.adesivo {
+	width: 250px;
+	height: auto;
+}
+
+.tela {
+	position: absolute;
+	z-index: 2;
+	
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* PHONE SCREENS */
+
+@media screen and (max-width: 1000px) {
+	.jogoFundo {
+		width: 100vw;
+	}
+	.adesivo {
+		width: 100%;
+	}
+	.interfaceJogo {
+		left: 0;
+		bottom: 0;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.adesivo {
+		width: 80%;
+	}
+	.fontEnergia {
+		right: 20%;
+		font-size: medium ;
+	}
+}
+
+/* PHONE ORIENTATION */
+@media screen and (orientation: landscape) {
+	.tela {
+		position: absolute;
+		z-index: 2;
+		
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.tela {
+		position: absolute;
+		z-index: 2;
+		
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
