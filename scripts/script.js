@@ -63,8 +63,8 @@ function mudarTela(mapa){
 	jogadorComodo = mapa;
 	comodoAtual = comodos[mapa];
 	
-	if(mapa != 0){ interfaceHUD.style.visibility = "visible"; }
-	if(mapa == 5){ interfaceHUD.style.visibility = "hidden"; }
+	if(mapa != 0){ interfaceHUD.style.display = "inline-block"; }
+	if(mapa == 5){ interfaceHUD.style.display = "none"; }
 	
 	consumoAtual.innerHTML = comodoConsumoInicial[mapa - 1];
 	consumoInicial.innerHTML = comodoConsumoInicial[mapa - 1];
