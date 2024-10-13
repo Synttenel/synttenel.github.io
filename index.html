@@ -23,19 +23,26 @@
 		
 	}
     </style>
-<script type="text/javascript" src="jquery-3.7.1.min.js"></script><!-- Optional: If targeting ES5 browers, as of ImageMapster v1.3.0, a Promise polyfill is required! -->
+<!-- Linka o arquivo 'jQuery' dentro de seu repositorio-->
+<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+<!-- Linka para uma CDN 'entrega de conteudo por https', onde temos o elemento promise do ES mais recente -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
+<!-- Linka o arquivo 'imagemapster' dentro do seu repositorio -->
 <script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
     <script>
-
+	//Inicia o plugin imageMapster 'jQuery'
 	$(document).ready(function () {
         'use strict';
-	
+	//Pega o id da imagem e usa funções do imageMapster
 	$('#cozinha').mapster({
+  //Identifica cada <area> que tenha data-title
   mapkey: 'data-title',
+  //Preenche a <area> clicada
   fillColor: '0096FF',
+  //Habilita a borda 
   stroke: true,
   strokeWidth: 2, 
+  //Escala o <map> e seus elemento para a resolução do dispositivo
   scaleMap: true
 			
 });})
@@ -43,12 +50,16 @@
 
 
 
-	    
+	//Array/objeto dos objetos do mapa 
         var cozinhaObjetos = [
             ["geladeira", "E", 25, true],
             ["microondas", "C", 75, true],
             ["fogao", "O", 150, true],
             ["loucas", "H", 100, true]
+	    ["video", "O1", 180, true]
+	    ["ventilador", "U", 90, true]
+	    ["ar", "s", 10, true]
+            ["tv", "E1", 65, true]
         ];
 
         // Função que será chamada ao clicar ou tocar em um objeto
@@ -57,22 +68,26 @@
            	console.log("Você clicou em: " + objeto[1] + " (peso: " + objeto[2] + "kg)");
         }
 
-        // Adiciona suporte para toque em dispositivos iOS
+        
    
     </script>
 </head>
 <body>
 
 <h1>Clique em um objeto da cozinha:</h1>
-<!-- Exemplo de imagem com mapa de imagem -->
+
 
 	
 <img src="cozinha.jpeg" alt="Cozinha" id="cozinha" usemap="#mapaCozinha">
 <map name="mapaCozinha">
-    <area  alt="e" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly" id="sim"></area>
+    <area  alt="e" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly"></area>
     <area alt="c"   data-title="c" href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
     <area  alt="o"   data-title="o" href="javascript:void(0)" coords="363,204,345,240,368,271,404,249,400,213" onclick="objetoClicado(2)" shape="poly"></area>
     <area  alt="h"   data-title="h" href="javascript:void(0)" coords="460,196,493,209,482,266,514,260,470,175,452,167,415,187,426,219,421,276,500,249" onclick="objetoClicado(3)" shape="poly"></area>
+    <area  alt="o1" data-title="o1" href="javascript:void(0)" coords="554,236,36" onclick="objetoClicado(4)" shape="circle"></area>
+    <area  alt="u" data-title="u" href="javascript:void(0)" coords="599,202,607,270,676,279,682,210,641,202" onclick="objetoClicado(5)" shape="poly"></area>
+    <area  alt="s" data-title="s" href="javascript:void(0)" coords="763,233,751,239,736,232,734,219,723,225,735,244,750,256,755,266,753,276,735,283,722,283,707,277,699,273,693,265,695,256,704,246,696,236,695,222,702,217,714,214,725,213,746,217" onclick="objetoClicado(6)" shape="poly"></area>
+    <area  alt="e1" data-title="e1" href="javascript:void(0)" coords="834,224,778,291" onclick="objetoClicado(7)" shape="rect"></area>
 </map>
  
 
