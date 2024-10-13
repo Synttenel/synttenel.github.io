@@ -17,7 +17,8 @@
 	//Pega o id da imagem e usa funções do imageMapster
 	$('img[usemap]').mapster({
   //Identifica cada <area> que tenha data-title
-  
+  highlight: false,
+  isSelectable: false,
   scaleMap: true
   //Escala o <map> e seus elemento para a resolução do dispositivo
 
@@ -109,7 +110,7 @@
 					<area shape="rect" data-title="Lâmpada" coords="640,130,878,0" alt="Lâmpada" href="javascript:void(0)" onclick="javascript:objetoClicado(3)" id="objeto">
 					<area shape="rect" data-title="Liquidificador" coords="792,224,899,412" alt="Liquidificador" href="javascript:void(0)" onclick="javascript:objetoClicado(4)" id="objeto">
 					
-					<area shape="rect" coords="0,0,1000,500" alt="#">
+					
 				</map>
 				
 				<map name="mapaSala">
