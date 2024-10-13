@@ -26,20 +26,27 @@
 <script type="text/javascript" src="jquery-3.7.1.min.js"></script><!-- Optional: If targeting ES5 browers, as of ImageMapster v1.3.0, a Promise polyfill is required! -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
 <script type="text/javascript" src="dist/jquery.imagemapster.min.js"></script>
-	<script>
-		$('img[mapaCozinha]').mapster({
-  fillColor: 'ff0000',
+    <script>
+
+
+
+	$('#mapaCozinha').mapster({
+  mapkey: 'data-title',
+  fillColor: '0096FF',
   stroke: true,
-  singleSelect: true,
+  strokeWidth: 2, 
   enableAutoResizeSupport: true,
   autoResize: true,
   autoResizeDelay: 0,
   autoResizeDuration: 0
 			
 });
-$('#sim').mapster('highlight');		
-	</script>
-    <script>
+$('#mapaCozinha').mapster('highlight');	
+
+
+
+
+	    
         var cozinhaObjetos = [
             ["geladeira", "E", 25, true],
             ["microondas", "C", 75, true],
@@ -50,7 +57,7 @@ $('#sim').mapster('highlight');
         // Função que será chamada ao clicar ou tocar em um objeto
         function objetoClicado(index) {
             var objeto = cozinhaObjetos[index];
-            alert("Você clicou em: " + objeto[1] + " (peso: " + objeto[2] + "kg)");
+           	console.log("Você clicou em: " + objeto[1] + " (peso: " + objeto[2] + "kg)");
         }
 
         // Adiciona suporte para toque em dispositivos iOS
@@ -65,10 +72,10 @@ $('#sim').mapster('highlight');
 	
 <img src="cozinha.jpeg" alt="Cozinha" usemap="#mapaCozinha">
 <map name="mapaCozinha">
-    <area  alt="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly" id="sim"></area>
-    <area alt="c"   href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
-    <area  alt="o"   href="javascript:void(0)" coords="363,204,345,240,368,271,404,249,400,213" onclick="objetoClicado(2)" shape="poly"></area>
-    <area  alt="h"   href="javascript:void(0)" coords="460,196,493,209,482,266,514,260,470,175,452,167,415,187,426,219,421,276,500,249" onclick="objetoClicado(3)" shape="poly"></area>
+    <area  alt="e" data-title="e" href="javascript:void(0)" coords="149,208,168,299,257,283,239,190" onclick="objetoClicado(0)"shape="poly" id="sim"></area>
+    <area alt="c"   data-title="c" href="javascript:void(0)" coords="287,212,262,237,271,269,296,279,334,253,316,211" onclick="objetoClicado(1)" shape="poly"></area>
+    <area  alt="o"   data-title="o" href="javascript:void(0)" coords="363,204,345,240,368,271,404,249,400,213" onclick="objetoClicado(2)" shape="poly"></area>
+    <area  alt="h"   data-title="h" href="javascript:void(0)" coords="460,196,493,209,482,266,514,260,470,175,452,167,415,187,426,219,421,276,500,249" onclick="objetoClicado(3)" shape="poly"></area>
 </map>
  
 
