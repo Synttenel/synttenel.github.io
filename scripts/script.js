@@ -77,7 +77,7 @@ $(document).ready(function () {
   fillColor: '0096FF',
   stroke: true,
   strokeWidth: 2, 
-        scaleMap: true  // Escala o <map> e seus elementos
+        scaleMap: true,  // Escala o <map> e seus elementos
 	areas: [{key: 'tela', isSelectable: false, highlight: false }, {key: 'final', isSelectable: false, highlight: false} ]
 });})
 	
