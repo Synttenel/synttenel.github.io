@@ -78,7 +78,7 @@ $(document).ready(function () {
   stroke: true,
   strokeWidth: 2, 
         scaleMap: true  // Escala o <map> e seus elementos
-	areas: [key: 'tela', isSelectable: false, highlight: false ], [key: 'final', isSelectable: false, highlight: false ]
+	areas: [{key: 'tela', isSelectable: false, highlight: false }, {key: 'final', isSelectable: false, highlight: false} ]
 });})
 	
 	
