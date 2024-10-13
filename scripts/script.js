@@ -73,10 +73,13 @@ function mudarTela(mapa){
 $(document).ready(function () {
         'use strict';
 	 $('img[usemap]').mapster({
-        highlight: false,
-        isSelectable: false,
+        mapkey: 'data-title',
+  fillColor: '0096FF',
+  stroke: true,
+  strokeWidth: 2, 
         scaleMap: true  // Escala o <map> e seus elementos
-    });})
+	areas: [key: 'tela', isSelectable: false, highlight: false ], [key: 'final', isSelectable: false, highlight: false ]
+});})
 	
 	
 }
