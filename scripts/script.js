@@ -55,26 +55,7 @@ var jogadorComodo = 0;
 var jogadorProgresso = [cozinhaProgresso, salaProgresso, quartoProgresso, banheiroProgresso];
 var jogadorEnergiaFaltando = [cozinhaFaltando, salaFaltando, quartoFaltando, banheiroFaltando];
 
-/*function reescalarMapa(){
-	var mapaElemento = document.getElementByName(comodoMapas[jogadorComodo].replace("#", ""));
-	var escala = divJogo.clientWidth / fundoJogo.naturalWidth;
-	var areaElemento = mapaElemento.querySelectorAll(`area`);
 
-	console.log(mapaElemento);
-
-    //areaElemento.forEach(area => {
-     //   const coords = area.getAttribute('coords').split(',').map(Number);
-    //    console.log(`Coordenadas Originais: ${coords}`);
-	//
-       // if (coords.length === 4) { // Verifique se temos 4 coordenadas
-     //       const newCoords = coords.map(coord => Math.round(coord * escala));
-   //         console.log(`Novas Coordenadas: ${newCoords}`);
-    //        area.setAttribute('coords', newCoords.join(','));
-      //  } else {
-        //    console.error('Formato de coordenadas inválido. Esperado: left,top,right,bottom');
-      //  }
-    //});
-}*/
 
 function mudarTela(mapa){
 	fundoJogo.src = comodoImagens[mapa];
@@ -90,7 +71,7 @@ function mudarTela(mapa){
 	
 	fundoJogo.setAttribute('usemap', comodoMapas[mapa]);
 	
-	//reescalarMapa();
+	
 }
 
 function objetoClicado(objetoNome){
