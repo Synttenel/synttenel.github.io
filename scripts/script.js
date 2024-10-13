@@ -81,10 +81,10 @@ $(document).ready(function () {
   strokeWidth: 2, 
         scaleMap: true,  // Escala o <map> e seus elementos
 	areas: [
-		{key: 'geladeira', highlight: true, isSelectable: true}
-		{key: 'microondas', highlight: true, isSelectable: true}
-		{key: 'fogão', highlight: true, isSelectable: true}
-		{key: 'lâmpada', highlight: true, isSelectable: true}
+		{key: 'geladeira', highlight: true, isSelectable: true},
+		{key: 'microondas', highlight: true, isSelectable: true},
+		{key: 'fogão', highlight: true, isSelectable: true},
+		{key: 'lâmpada', highlight: true, isSelectable: true},
 		{key: 'liquidificador', highlight: true, isSelectable: true}
 	       
 	       
