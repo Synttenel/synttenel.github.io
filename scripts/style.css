@@ -127,29 +127,4 @@ font {
 		transform: translate(-50%, -50%);
 	}
 }
-/* Estilos para dispositivos em modo retrato */
-@media screen and (orientation: portrait) {
-  body {
-    /* Estilos normais para retrato */
-    background-color: #fff;
-  }
-}
 
-/* Estilos para dispositivos em modo paisagem */
-@media screen and (orientation: landscape) {
-  body {
-    /* Mostrar uma mensagem ou aplicar estilos que desencorajam o uso em paisagem */
-    background-color: #f00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
-  }
-
-  body::before {
-    content: "Por favor, use o dispositivo em modo retrato.";
-  }
-}
