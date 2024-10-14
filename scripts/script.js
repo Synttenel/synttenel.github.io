@@ -77,6 +77,7 @@ $(document).ready(function () {
   fillColor: '0096FF',
   highlight: true,
   isSelectable: true,
+  isDeselectable: false,
   stroke: true,
   strokeWidth: 2, 
         scaleMap: true,  // Escala o <map> e seus elementos
