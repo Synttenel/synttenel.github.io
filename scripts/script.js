@@ -80,6 +80,7 @@ $(document).ready(function () {
   isSelectable: true,
   isDeselectable: false,
   stroke: true,
+  strokeOpacity: 0.3,
   strokeWidth: 2, 
         scaleMap: true,  // Escala o <map> e seus elementos
 	areas: [
