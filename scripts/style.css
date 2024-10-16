@@ -128,3 +128,13 @@ font {
 	}
 }
 
+.botão {
+	padding: 10px;
+	margin: 5px;
+  	border-radius: 10px;
+	border: 2px solid blue;
+	text-shadow: 0 0 5px blue, 0 0 5px red, 0 5px 0 yellow;
+	
+
+	
+}
