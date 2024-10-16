@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Energia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .remove-button {
+            background-color: #dc3545;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            width: 150px;
+        }
+        .remove-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculadora de Consumo de Energia</h1>
+
+    <div class="container">
+        <div class="input-group">
+            <label for="aparelho">Selecione o aparelho:</label>
+            <select id="aparelho">
+                <option value="135">ABRIDOR/AFIADOR (135W)</option>
+                <option value="20">AFIADOR DE FACAS (20W)</option>
+                <option value="80">APARELHO DE SOM 3 EM 1 (80W)</option>
+                <option value="20">APARELHO DE SOM PEQUENO (20W)</option>
+                <option value="1550">AQUECEDOR DE AMBIENTE (1550W)</option>
+                <option value="100">AQUECEDOR DE MAMADEIRA (100W)</option>
+                <option value="1000">AR-CONDICIONADO 7.500 BTU (1000W)</option>
+                <option value="1350">AR-CONDICIONADO 10.000 BTU (1350W)</option>
+                <option value="1450">AR-CONDICIONADO 12.000 BTU (1450W)</option>
+                <option value="2000">AR-CONDICIONADO 15.000 BTU (2000W)</option>
+                <option value="2100">AR-CONDICIONADO 18.000 BTU (2100W)</option>
+                <option value="100">ASPIRADOR DE PÓ (100W)</option>
+                <option value="10">BARBEADOR/DEPILADOR/MASSAGEADOR (10W)</option>
+                <option value="120">BATEDEIRA (120W)</option>
+                <option value="1500">BOILER 50 e 60 L (1500W)</option>
+                <option value="2030">BOILER 100 L (2030W)</option>
+                <option value="3000">BOILER 200 a 500 L (3000W)</option>
+                <option value="335">BOMBA D'ÁGUA 1/4 CV (335W)</option>
+                <option value="613">BOMBA D'ÁGUA 1/2 CV (613W)</option>
+                <option value="849">BOMBA D'ÁGUA 3/4 CV (849W)</option>
+                <option value="1051">BOMBA D'ÁGUA 1 CV (1051W)</option>
+                <option value="10">BOMBA AQUÁRIO GRANDE (10W)</option>
+                <option value="5">BOMBA AQUÁRIO PEQUENO (5W)</option>
+                <option value="600">CAFETEIRA ELÉTRICA (600W)</option>
+                <option value="3800">CHURRASQUEIRA (3800W)</option>
+                <option value="3500">CHUVEIRO ELÉTRICO (3500W)</option>
+                <option value="200">CIRCULADOR AR GRANDE (200W)</option>
+                <option value="90">CIRCULADOR AR PEQUENO/MÉDIO (90W)</option>
+                <option value="180">COMPUTADOR/ IMPRESSORA/ ESTABILIZADOR (180W)</option>
+                <option value="1140">CORTADOR DE GRAMA GRANDE (1140W)</option>
+                <option value="500">CORTADOR DE GRAMA PEQUENO (500W)</option>
+                <option value="50">ESCOVA DE DENTES ELÉTRICA (50W)</option>
+                <option value="65">ESPREMEDOR DE FRUTAS (65W)</option>
+                <option value="170">EXAUSTOR FOGÃO (170W)</option>
+                <option value="110">EXAUSTOR PAREDE (110W)</option>
+                <option value="220">FACA ELÉTRICA (220W)</option>
+                <option value="1000">FERRO ELÉTRICO AUTOMÁTICO (1000W)</option>
+                <option value="60">FOGÃO COMUM (60W)</option>
+                <option value="9120">FOGÃO ELÉTRICO 4 CHAPAS (9120W)</option>
+                <option value="1500">FORNO À RESISTÊNCIA GRANDE (1500W)</option>
+                <option value="800">FORNO À RESISTÊNCIA PEQUENO (800W)</option>
+                <option value="1200">FORNO MICROONDAS (1200W)</option>
+                <option value="130">FREEZER VERTICAL/HORIZONTAL (130W)</option>
+                <option value="70">FRIGOBAR (70W)</option>
+                <option value="1000">FRITADEIRA ELÉTRICA (1000W)</option>
+                <option value="90">GELADEIRA 1 PORTA (90W)</option>
+                <option value="130">GELADEIRA 2 PORTAS (130W)</option>
+                <option value="900">GRILL (900W)</option>
+                <option value="26">IOGURTEIRA (26W)</option>
+                <option value="11">LÂMPADA FLUORESCENTE COMPACTA - 11W (11W)</option>
+                <option value="15">LÂMPADA FLUORESCENTE COMPACTA - 15W (15W)</option>
+                <option value="23">LÂMPADA FLUORESCENTE COMPACTA - 23W (23W)</option>
+                <option value="40">LÂMPADA INCANDESCENTE - 40W (40W)</option>
+                <option value="60">LÂMPADA INCANDESCENTE - 60W (60W)</option>
+                <option value="100">LÂMPADA INCANDESCENTE - 100W (100W)</option>
+                <option value="1500">LAVADORA DE LOUÇAS (1500W)</option>
+                <option value="500">LAVADORA DE ROUPAS (500W)</option>
+                <option value="300">LIQUIDIFICADOR (300W)</option>
+                <option value="100">MÁQUINA DE COSTURA (100W)</option>
+                <option value="350">MÁQUINA DE FURAR (350W)</option>
+                <option value="120">MICROCOMPUTADOR (120W)</option>
+                <option value="320">MOEDOR DE CARNES (320W)</option>
+                <option value="420">MULTIPROCESSADOR (420W)</option>
+                <option value="40">NEBULIZADOR (40W)</option>
+                <option value="100">OZONIZADOR (100W)</option>
+                <option value="1100">PANELA ELÉTRICA (1100W)</option>
+                <option value="1100">PIPOQUEIRA (1100W)</option>
+                <option value="45">RÁDIO ELÉTRICO GRANDE (45W)</option>
+                <option value="10">RÁDIO ELÉTRICO PEQUENO (10W)</option>
+                <option value="5">RÁDIO RELÓGIO (5W)</option>
+                <option value="5000">SAUNA (5000W)</option>
+                <option value="1400">SECADOR DE CABELO GRANDE (1400W)</option>
+                <option value="600">SECADOR DE CABELO PEQUENO (600W)</option>
+                <option value="3500">SECADORA DE ROUPA GRANDE (3500W)</option>
+                <option value="1000">SECADORA DE ROUPA PEQUENA (1000W)</option>
+                <option value="20">SECRETÁRIA ELETRÔNICA (20W)</option>
+                <option value="15">SORVETEIRA (15W)</option>
+                <option value="3500">TORNEIRA ELÉTRICA (3500W)</option>
+                <option value="800">TORRADEIRA (800W)</option>
+                <option value="60">TV EM CORES - 14" (60W)</option>
+                <option value="70">TV EM CORES - 18" (70W)</option>
+                <option value="90">TV EM CORES - 20" (90W)</option>
+                <option value="110">TV EM CORES - 29" (110W)</option>
+                <option value="40">TV EM PRETO E BRANCO (40W)</option>
+                <option value="40">TV PORTÁTIL (40W)</option>
+                <option value="120">VENTILADOR DE TETO (120W)</option>
+                <option value="65">VENTILADOR PEQUENO (65W)</option>
+                <option value="10">VÍDEOCASSETE (10W)</option>
+                <option value="15">VÍDEOGAME (15W)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="horas">Horas de uso por dia:</label>
+            <input type="number" id="horas" placeholder="Digite as horas de uso diárias">
+        </div>
+
+        <div class="input-group">
+            <label for="tarifa">Tarifa de energia (R$/kWh):</label>
+            <input type="number" id="tarifa" placeholder="Digite a tarifa de energia em R$" step="0.01">
+        </div>
+
+        <button onclick="adicionarAparelho()">Adicionar Aparelho</button>
+
+        <h2>Dispositivos Selecionados</h2>
+        <div id="listaAparelhos"></div>
+
+        <div id="resultado" class="result">
+            Total de consumo mensal: <strong id="consumoTotal">0.00 kWh</strong><br>
+            Custo total: <strong id="custoTotal">R$ 0.00</strong>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
