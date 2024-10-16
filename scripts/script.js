@@ -60,7 +60,7 @@ var banheiroObjetos = [
 	["speaker", "Speaker", 25, true],
 	["lavaroupa", "Lava-roupa", 150, true],
 	["chuveiro", "Chuveiro", 125, true],
-	["secador", "Secador", 25, true
+	["secador", "Secador", 25, true]
 ];
 var banheiroProgresso = 0;
 var banheiroFaltando = 400;
