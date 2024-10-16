@@ -69,19 +69,18 @@ function mudarTela(mapa){
 	consumoInicial.innerHTML = comodoConsumoInicial[mapa - 1];
 	
 	fundoJogo.setAttribute('usemap', comodoMapas[mapa]);
-	
+	//0096FF
 $(document).ready(function () {
         'use strict';
 	 $('img[usemap]').mapster({
         mapKey: 'data-key',
-  fillColor: '0096FF',
-  fillOpacity: 0.3,
+  fillColor: '4F7942',
+  fillOpacity: 0.2,
   highlight: true,
   isSelectable: true,
   isDeselectable: false,
   stroke: true,
   strokeColor: 'C19A6B',
-  strokeOpacity: 0.1,
   strokeWidth: 2, 
         scaleMap: true,  // Escala o <map> e seus elementos
 	areas: [
