@@ -75,6 +75,7 @@ $(document).ready(function () {
 	 $('img[usemap]').mapster({
         mapKey: 'data-key',
   fillColor: '0096FF',
+  fillOpacity: 0.3,
   highlight: true,
   isSelectable: true,
   isDeselectable: false,
