@@ -109,11 +109,11 @@ $(document).ready(function () {
 	areas: [
 		{key: 'tela', highlight: false, isSelectable: false},
 		{key: 'final', highlight: false, isSelectable:false},
-		{key: 'geladeira', render_select: {altImage: 'altcozinha'}},
-		{key: 'microondas', render_select: {altImage: 'altcozinha'}},
-		{key: 'fogão', render_select: {altImage: 'altcozinha'}},
-		{key: 'tostadora', render_select: {altImage: 'altcozinha'}},
-		{key: 'cafeteira', render_select: {altImage: 'altcozinha'}}
+		{key: 'geladeira', render_select: {stroke: false, fillOpacity: 0.3, altImageOpacity: 0.5, altImage: 'altcozinha'}},
+		{key: 'microondas', render_select: {stroke: false, fillOpacity: 0.3, altImageOpacity: 0.5, altImage: 'altcozinha'}},
+		{key: 'fogão', render_select: {stroke: false, fillOpacity: 0.3, altImageOpacity: 0.5, altImage: 'altcozinha'}},
+		{key: 'tostadora', render_select: {stroke: false, fillOpacity: 0.3, altImageOpacity: 0.5, altImage: 'altcozinha'}},
+		{key: 'cafeteira', render_select: {stroke: false, fillOpacity: 0.3, altImageOpacity: 0.5, altImage: 'altcozinha'}}
 	       
 	       
 	       
