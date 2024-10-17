@@ -118,7 +118,12 @@ $(document).ready(function () {
 		{key: 'telefone', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
 		{key: 'videogame', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
 		{key: 'ventcond', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
-		{key: 'luminaria', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}}
+		{key: 'luminaria', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
+		{key: 'pc', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto1'}},
+		{key: 'impressora', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto1'}},
+		{key: 'alarme', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto1'}},
+		{key: 'ventilador', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto1'}},
+		{key: 'ar', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto2'}},
 	       
 	       
 	       
