@@ -113,7 +113,12 @@ $(document).ready(function () {
 		{key: 'microondas', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
 		{key: 'fogão', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
 		{key: 'tostadora', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
-		{key: 'cafeteira', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}}
+		{key: 'cafeteira', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
+		{key: 'televisão', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
+		{key: 'telefone', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
+		{key: 'videogame', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
+		{key: 'ventcond', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}},
+		{key: 'luminaria', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altsala1'}}
 	       
 	       
 	       
