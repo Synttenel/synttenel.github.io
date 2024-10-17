@@ -1,6 +1,7 @@
 const divJogo = document.getElementById("telaJogo");
 const fundoJogo = document.getElementById("fundoJogo");
 
+
 //comodos
 var comodos = ["Titulo", "Cozinha", "Sala", "Quarto", "Banheiro", "Final"];
 var comodoMapas = ["#telaTitulo", "#mapaCozinha", "#mapaSala", "#mapaQuarto", "#mapaBanheiro", "#telaFinal"];
@@ -69,6 +70,28 @@ var jogadorComodo = 0;
 var jogadorProgresso = [cozinhaProgresso, salaProgresso, quartoProgresso, banheiroProgresso];
 var jogadorEnergiaFaltando = [cozinhaFaltando, salaFaltando, quartoFaltando, banheiroFaltando];
 
+var tempoInicial;
+var tempoFinal;
+var tempoTotal;
+
+// Função para iniciar o temporizador
+function iniciarTemporizador() {
+    tempoInicial = new Date();  // Grava o momento de início
+}
+
+// Função para parar o temporizador e calcular a pontuação
+function finalizarTemporizador() {
+    tempoFinal = new Date();  // Grava o momento de fim
+    tempoTotal = Math.floor((tempoFinal - tempoInicial) / 1000);  // Calcula o tempo total em segundos
+    calcularPontuacao(tempoTotal);  // Chama a função de calcular a pontuação
+}
+
+// Função para calcular a pontuação baseada no tempo
+function calcularPontuacao(tempoTotal) {
+    var pontuacao = Math.max(1000 - tempoTotal * 10, 0);  // Exemplo: 1000 pontos - 10 pontos por segundo
+    document.getElementById('pontuacaoFinal').innerHTML = pontuacao;
+}
+
 
 function mudarTela(mapa){
 	fundoJogo.src = comodoImagens[mapa];
@@ -78,6 +101,19 @@ function mudarTela(mapa){
 	
 	if(mapa != 0){ interfaceHUD.style.visibility = "visible"; }
 	if(mapa == 5){ interfaceHUD.style.visibility = "hidden"; }
+	 if (mapa != 0) { 
+        interfaceHUD.style.visibility = "visible"; 
+    }
+
+    if (mapa == 1) {
+        iniciarTemporizador();  // Inicia o temporizador ao começar o jogo
+    }
+
+    if (mapa == 5) {
+        finalizarTemporizador();  // Finaliza o temporizador ao chegar na tela final
+        document.getElementById('telaFinal').style.visibility = "visible";  // Exibe a tela final
+        interfaceHUD.style.visibility = "hidden";
+    }
 	
 	consumoAtual.innerHTML = comodoConsumoInicial[mapa - 1];
 	consumoInicial.innerHTML = comodoConsumoInicial[mapa - 1];
