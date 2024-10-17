@@ -103,7 +103,7 @@ $(document).ready(function () {
 		altsala2: 'assets/comodos/sala3.png',
 		altquarto1: 'assets/comodos/quarto2.png',
 		altquarto2: 'assets/comodos/quarto3.png',
-		atlbanheiro: 'assets/comodos/banheiro2.png'
+		altbanheiro: 'assets/comodos/banheiro2.png'
 		
 	},
 	areas: [
