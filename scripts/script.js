@@ -70,6 +70,7 @@ var jogadorComodo = 0;
 var jogadorProgresso = [cozinhaProgresso, salaProgresso, quartoProgresso, banheiroProgresso];
 var jogadorEnergiaFaltando = [cozinhaFaltando, salaFaltando, quartoFaltando, banheiroFaltando];
 
+//AQUI//
 var tempoInicial;
 var tempoFinal;
 var tempoTotal;
@@ -91,7 +92,7 @@ function calcularPontuacao(tempoTotal) {
     var pontuacao = Math.max(1000 - tempoTotal * 10, 0);  // Exemplo: 1000 pontos - 10 pontos por segundo
     document.getElementById('pontuacaoFinal').innerHTML = pontuacao;
 }
-
+////AQUI
 
 function mudarTela(mapa){
 	fundoJogo.src = comodoImagens[mapa];
@@ -101,6 +102,8 @@ function mudarTela(mapa){
 	
 	if(mapa != 0){ interfaceHUD.style.visibility = "visible"; }
 	if(mapa == 5){ interfaceHUD.style.visibility = "hidden"; }
+
+	//AQUI//
 	 if (mapa != 0) { 
         interfaceHUD.style.visibility = "visible"; 
     }
@@ -114,6 +117,7 @@ function mudarTela(mapa){
         document.getElementById('telaFinal').style.visibility = "visible";  // Exibe a tela final
         interfaceHUD.style.visibility = "hidden";
     }
+	////AQUI
 	
 	consumoAtual.innerHTML = comodoConsumoInicial[mapa - 1];
 	consumoInicial.innerHTML = comodoConsumoInicial[mapa - 1];
