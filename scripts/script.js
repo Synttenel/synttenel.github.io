@@ -4,8 +4,8 @@ const fundoJogo = document.getElementById("fundoJogo");
 //comodos
 var comodos = ["Titulo", "Cozinha", "Sala", "Quarto", "Banheiro", "Final"];
 var comodoMapas = ["#telaTitulo", "#mapaCozinha", "#mapaSala", "#mapaQuarto", "#mapaBanheiro", "#telaFinal"];
-var comodoImagens = ["/assets/titulo.jpeg", "/assets/comodos/cozinha.png", "/assets/comodos/sala.png", "/assets/comodos/quarto.png", "/assets/comodos/banheiro.png", "/assets/final.jpeg"]
-var comodoConsumoInicial = [670, 100, 100, 100];
+var comodoImagens = ["/assets/titulo.jpeg", "/assets/comodos/cozinha1.png", "/assets/comodos/sala1.png", "/assets/comodos/quarto1.png", "/assets/comodos/banheiro1.png", "/assets/final.jpeg"]
+var comodoConsumoInicial = [670, 750, 700, 725];
 var comodoAtual = comodos[0];
 
 //interface
@@ -22,8 +22,8 @@ var cozinhaObjetos = [
 	["geladeira", "Geladeira", 25, true],
 	["microondas", "Micro-ondas", 75, true],
 	["fogao", "Fogão", 150, true],
-	["lampada", "Lâmpada", 10, true],
-	["liquidificador", "Liquidificador", 50, true]
+	["tostadora", "Tostadora", 10, true],
+	["cafeteira", "Cafeteira", 50, true]
 ];
 var cozinhaProgresso = 0;
 var cozinhaFaltando = 310;
@@ -31,39 +31,37 @@ var cozinhaFaltando = 310;
 const salaMapa = document.getElementsByName("mapaSala");
 var salaObjetos = [
 	["televisao", "Televisão", 150, true],
-	["speakers", "Speakers", 25, true],
-	["videogame", "Video-game", 100, true],
-	["tocafitas", "Toca Fitas", 75, true],
-	["luminaria", "Luminária", 25, true],
 	["telefone", "Telefone", 25, true],
-	["ar", "Ar-condicionado", 175, true]
+	["videogame", "Video-game", 100, true],
+	["ventcond", "Vent-cond", 150, true],
+	["luminaria", "Luminária", 25, true]
+	
 ];
 var salaProgresso = 0;
-var salaFaltando = 575;
+var salaFaltando = 450;
 
 const quartoMapa = document.getElementsByName("mapaQuarto");
 var quartoObjetos = [
-	["notebook", "Notebook", 50, true],
+	["pc", "Pc", 100, true],
 	["impressora", "Impressora", 50, true],
-	["alarme", "Alarme", 25, true],
-	["ventilador", "Ventilador", 75, true],
-	["luminariaq", "Lumináriaq", 25, true],
-	["telefoneq", "Telefoneq", 25, true],
-	["arq", "Ar-condicionadoq", 250, true]
+	["alarme", "Alarme", 10, true],
+	["ventilador", "Ventilador", 25, true],
+	["ar", "Ar-condicionado", 150, true],
+	
 ];
 var quartoProgresso = 0;
-var quartoFaltando = 500;
+var quartoFaltando = 335;
 
 const banheiroMapa = document.getElementsByName("mapaBanheiro");
 var banheiroObjetos = [
-	["notebookb", "Notebookb", 75, true],
-	["speaker", "Speaker", 25, true],
+	["notebook", "Notebook", 100, true],
+	["caixasom", "Caixa-som", 25, true],
 	["lavaroupa", "Lava-roupa", 150, true],
 	["chuveiro", "Chuveiro", 125, true],
 	["secador", "Secador", 25, true]
 ];
 var banheiroProgresso = 0;
-var banheiroFaltando = 400;
+var banheiroFaltando = 425;
 
 //jogador
 var comodoObjetos = [cozinhaObjetos, salaObjetos, quartoObjetos, banheiroObjetos];
