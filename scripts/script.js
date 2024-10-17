@@ -97,13 +97,13 @@ $(document).ready(function () {
   strokeColor: '228B22',
   strokeWidth: 2, 
         scaleMap: true,  // Escala o <map> e seus elementos
-	atlImages: {
+	altImages: {
  		altcozinha: 'assets/comodos/cozinha2.png',
-		altsala1: '',
-		altsala2: '',
-		altquarto1: '',
-		altquarto2: '',
-		atlbanheiro: ''
+		altsala1: 'assets/comodos/sala2.png',
+		altsala2: 'assets/comodos/sala3.png',
+		altquarto1: 'assets/comodos/quarto2.png',
+		altquarto2: 'assets/comodos/quarto3.png',
+		atlbanheiro: 'assets/comodos/banheiro2.png'
 		
 	},
 	areas: [
