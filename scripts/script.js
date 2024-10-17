@@ -124,7 +124,11 @@ $(document).ready(function () {
 		{key: 'alarme', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto1'}},
 		{key: 'ventilador', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto1'}},
 		{key: 'ar', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altquarto2'}},
-	       
+	        {key: 'notebook', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altbanheiro'}},
+		{key: 'caixasom', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altbanheiro'}},
+		{key: 'lavaroupa', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altbanheiro'}},
+		{key: 'chuveiro', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altbanheiro'}},
+		{key: 'secador', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altbanheiro'}},
 	       
 	       
 	       ]
