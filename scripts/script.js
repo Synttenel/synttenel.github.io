@@ -105,7 +105,7 @@ $(document).ready(function () {
 		altquarto2: '',
 		atlbanheiro: ''
 		
-	}
+	},
 	areas: [
 		{key: 'tela', highlight: false, isSelectable: false},
 		{key: 'final', highlight: false, isSelectable:false},
