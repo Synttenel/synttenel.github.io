@@ -97,10 +97,23 @@ $(document).ready(function () {
   strokeColor: '228B22',
   strokeWidth: 2, 
         scaleMap: true,  // Escala o <map> e seus elementos
+	atlImages: {
+ 		altcozinha: 'assets/comodos/cozinha2.png',
+		altsala1: '',
+		altsala2: '',
+		altquarto1: '',
+		altquarto2: '',
+		atlbanheiro: ''
+		
+	}
 	areas: [
 		{key: 'tela', highlight: false, isSelectable: false},
-		{key: 'final', highlight: false, isSelectable:false}
-		
+		{key: 'final', highlight: false, isSelectable:false},
+		{key: 'geladeira', render_select: {altImage: 'altcozinha'}},
+		{key: 'microondas', render_select: {altImage: 'altcozinha'}},
+		{key: 'fogão', render_select: {altImage: 'altcozinha'}},
+		{key: 'tostadora', render_select: {altImage: 'altcozinha'}},
+		{key: 'cafeteira', render_select: {altImage: 'altcozinha'}}
 	       
 	       
 	       
