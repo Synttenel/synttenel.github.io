@@ -149,7 +149,7 @@ $(document).ready(function () {
 	areas: [
 		{key: 'tela', highlight: false, isSelectable: false},
 		{key: 'final', highlight: false, isSelectable:false},
-		{key: 'geladeira', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
+		{key: 'geladeira', staticState: true, render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
 		{key: 'microondas', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
 		{key: 'fogão', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
 		{key: 'tostadora', render_select: {stroke: false, fillOpacity: 1, altImageOpacity: 1, altImage: 'altcozinha'}},
